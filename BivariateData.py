@@ -8,8 +8,8 @@ dataval = input("Input your values in the form x y, enter -1 to terminate and di
 i=1
 while len(dataval)>1:
     i+=1
-    data[0].append(int(dataval[0]))
-    data[1].append(int((dataval[1])))
+    data[0].append(float(dataval[0]))
+    data[1].append(float((dataval[1])))
     dataval = input("Data pair "+str(i)+": ").split()
     
 print(data)
