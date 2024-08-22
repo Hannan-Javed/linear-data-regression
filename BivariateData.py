@@ -11,8 +11,7 @@ while len(dataval)>1:
     data[0].append(float(dataval[0]))
     data[1].append(float((dataval[1])))
     dataval = input("Data pair "+str(i)+": ").split()
-    
-print(data)
+
 def correlation_coefficient():
     avgx = 0
     stdx = 0
@@ -37,7 +36,8 @@ def correlation_coefficient():
     m = r*stdy/stdx
     b = avgy-(m*avgx)
     y = (m*x)+b
-    print("mean of x: ", avgx, "mean of y: ",avgy ,"deviation of x: ", stdx, "standard deviation of y: ", stdy,"coefficient of determination: ", r,"gradient of line: ", m,"y-intercept: ", b)
+    print("\n\nMETHOD 1:")
+    print(f"mean of x: {round(avgx,2)}\nmean of y: {round(avgy,2)}\nstandard deviation of x: {round(stdx,2)}\nstandard deviation of y: {round(stdy,2)}\ncoefficient of determination (r): {round(r,2)}\ngradient of line: {round(m,2)}\ny-intercept: {round(b,2)}")
     plt.plot(x, y, color='grey')
     plt.xlim(min(data[0])-5, max(data[0])+5)
     plt.ylim(min(data[1])-5, max(data[1])+5)
@@ -71,7 +71,8 @@ def regression_line():
     r=m*((avgx2-(avgx**2))**0.5)/((avgy2-(avgy**2))**0.5)
     b = avgy-(avgx*m)
     y = m*x+b
-    print(avgx,avgy,avgxy,m,r, b)
+    print("\n\nMETHOD 2:")
+    print(f"mean of x: {round(avgx,2)}\nmean of y: {round(avgy,2)}\ncoefficient of determination (r): {round(r,2)}\ngradient of line: {round(m,2)}\ny-intercept: {round(b,2)}")
     plt.plot(x, y, color='blue')
     plt.xlim(min(data[0])-5, max(data[0])+5)
     plt.ylim(min(data[1])-5, max(data[1])+5)
